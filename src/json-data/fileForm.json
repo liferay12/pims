@@ -1,0 +1,231 @@
+{
+    "id": "fileForm",
+    "title": "Create file",
+    "subtitle": "New Employee Registration",
+    "namespace": "",
+    "enctype": "multipart/form-data",
+    "fields": [
+        {
+            "type": "group",
+            "name": "nameGroup",
+            "label": "file type",
+            "cols": 2,
+            "fields": [
+                {
+                    "type": "select",
+                    "name": "nature",
+                    "label": "Nature",
+                    "cssClass": "",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "Physical"
+                        },
+                        {
+                            "value": "2",
+                            "label": "Electronic",
+                            "selected": "selected"
+                        }
+                    ],
+                    "required": false
+                },
+                {
+                    "type": "select",
+                    "name": "type",
+                    "label": "Type",
+                    "cssClass": "",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "SFS"
+                        },
+                        {
+                            "value": "2",
+                            "label": "NON-SFS",
+                            "selected": "selected"
+                        }
+                    ],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "name": "basicHead",
+            "label": "Basic-Head",
+            "cssClass": "",
+            "provider": {
+                "url": "http://localhost:8080/api/v1/jetprocess/basichead",
+                "value": "id",
+                "label": "name"
+            },
+            "required": false
+        },
+        {
+            "type": "select",
+            "name": "primaryHead",
+            "label": "Primary-Head",
+            "cssClass": "",
+            "provider": {
+                "url": "http://localhost:8080/api/v1/jetprocess/basichead",
+                "value": "id",
+                "label": "name"
+            },
+            "required": false
+        },
+        {
+            "type": "select",
+            "name": "secondaryHead",
+            "label": "Secondary-Head",
+            "cssClass": "",
+            "provider": {
+                "url": "http://localhost:8080/api/v1/jetprocess/basichead",
+                "value": "id",
+                "label": "name"
+            },
+            "required": false
+        },
+        {
+            "type": "select",
+            "name": "tertiaryHead",
+            "label": "Tertiary-Head",
+            "cssClass": "",
+            "provider": {
+                "url": "http://localhost:8080/api/v1/jetprocess/basichead",
+                "value": "id",
+                "label": "name"
+            },
+            "required": false
+        },
+        {
+            "type": "text",
+            "name": " year",
+            "label": "year",
+            "cssClass": "form-control",
+            "required": false,
+            "placeHolder": "First Name",
+            "disabled": false,
+            "readOnly": false,
+            "checked": false,
+            "hidden": false,
+            "value": ""
+        },
+        {
+            "type": "text",
+            "name": "fileCode",
+            "label": "file-code",
+            "cssClass": "form-control",
+            "required": false,
+            "placeHolder": "file code",
+            "disabled": false,
+            "readOnly": false,
+            "checked": false,
+            "hidden": false,
+            "value": ""
+        },
+        {
+            "type": "text",
+            "name": "subject",
+            "label": "subject",
+            "cssClass": "form-control",
+            "required": false,
+            "placeHolder": "subject",
+            "disabled": false,
+            "readOnly": false,
+            "checked": false,
+            "hidden": false,
+            "value": ""
+        },
+        {
+            "type": "select",
+            "name": "category",
+            "label": "Category",
+            "cssClass": "",
+            "provider": {
+                "url": "http://localhost:8080/api/v1/jetprocess/basichead",
+                "value": "id",
+                "label": "name"
+            },
+            "required": false
+        },
+        {
+            "type": "select",
+            "name": "subCategory",
+            "label": "Sub-Category",
+            "cssClass": "",
+            "provider": {
+                "url": "http://localhost:8080/api/v1/jetprocess/basichead",
+                "value": "id",
+                "label": "name"
+            },
+            "required": false
+        },
+        {
+            "type": "textarea",
+            "name": "remark",
+            "label": "Remarks",
+            "cssClass": "form-control",
+            "required": false,
+            "placeHolder": "Remarks",
+            "disabled": false,
+            "readOnly": false,
+            "checked": false,
+            "hidden": false,
+            "value": ""
+        },
+        {
+            "type": "text",
+            "name": "reference",
+            "label": "Reference",
+            "cssClass": "form-control",
+            "required": false,
+            "placeHolder": "Reference",
+            "disabled": false,
+            "readOnly": false,
+            "checked": false,
+            "hidden": false,
+            "value": ""
+        }
+    ],
+    "actions": [
+        {
+            "name": "save",
+            "type": "submit",
+            "label": "Save",
+            "cssClass": "btn btn-sm btn-primary mt-3 ms-2",
+            "applyTo": "form",
+            "handler": {
+                "type": "javascript",
+                "func": "submitForm(event)",
+                "method": "post",
+                "url": "http://localhost:8082/api/v1/user"
+            }
+        },
+        {
+            "name": "cancel",
+            "type": "button",
+            "label": "Cancel",
+            "cssClass": "btn btn-sm btn-danger mt-3 ms-2",
+            "applyTo": "form",
+            "handler": {
+                "type": "javascript",
+                "func": "test();"
+            }
+        },
+        {
+            "name": "add",
+            "type": "button",
+            "label": "Add Employee",
+            "cssClass": "btn-danger",
+            "applyTo": "list"
+        }
+    ],
+    "dataProvider": {
+        "collection": {
+            "url": ""
+        },
+        "selector": {
+            "url": ""
+        }
+    }
+}

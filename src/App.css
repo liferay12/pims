@@ -1,38 +1,15 @@
-.App {
-  text-align: center;
-}
+@import "./theme/css/bootstrap-clockpicker.min.css";
+@import "./theme/css/bootstrap-datetimepicker.min.css";
+@import "./theme/css/bootstrap-select.min.css";
+@import "./theme/css/buttons.dataTables.min.css";
+@import "./theme/css/dropzone.css";
+@import "./theme/css/jquery-jvectormap.css";
+/* @import "./theme/css/jquery.dataTables.min.css"; */
+/* @import "./theme/css/lightgallery.min.css"; */
+@import "./theme/css/main.min.css";
+@import "./theme/css/nouislider.min.css";
+@import "./theme/css/smart_wizard.min.css";
+@import "./theme/css/style.css";
+@import "./theme/css/swiper-bundle.min.css";
+@import "./theme/css/tagify.css";
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

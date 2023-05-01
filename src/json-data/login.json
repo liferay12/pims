@@ -1,0 +1,21 @@
+{
+    "id": "",
+    "title": "User Login",
+    "subTitle": "",
+    "fields": [
+        {
+            "type": "email",
+            "name": "email",
+            "label": "email",
+            "cssClass": "",
+            "required": false
+        },
+        {
+            "type": "password",
+            "name": "pass",
+            "label": "pass",
+            "cssClass": "",
+            "required": false
+        }
+    ]
+}

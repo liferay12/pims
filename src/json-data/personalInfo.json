@@ -1,0 +1,455 @@
+{
+    "id": "fileForm",
+    "title": "PROFILE",
+    "subtitle": "New Employee Registration",
+    "namespace": "",
+    "enctype": "multipart/form-data",
+    "fields": [
+        {
+            "type": "group",
+            "name": "nameGroup",
+            "label": "Basic Information",
+            "cols": 6,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "employeeId",
+                    "label": "Employee ID",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "nickName",
+                    "label": "Nick Name",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "firstName",
+                    "label": "First Name",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "lastName",
+                    "label": "Last Name",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "email",
+                    "name": "emailAddress",
+                    "label": "Email Address",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "nameGroup",
+            "label": "Work Information",
+            "cols": 3,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "department",
+                    "label": "Department",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "role",
+                    "label": "Role",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "location",
+                    "label": "Location",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "employeeType",
+                    "label": "Emloyee Type",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "designation",
+                    "label": "Designation",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "sourceOfHire",
+                    "label": "Source of Hire",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "date",
+                    "name": "dateOfJoin",
+                    "label": "Date of joining",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "nameGroup",
+            "label": "Hierarchy Information",
+            "cols": 8,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "reportingManager",
+                    "label": "Reporting Manager",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "nameGroup",
+            "label": "Personal Details",
+            "cols": 6,
+            "fields": [
+                {
+                    "type": "date",
+                    "name": "dateOfBirth",
+                    "label": "Date of Birth",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "select",
+                    "name": "maritalStatus",
+                    "label": "Marital Status",
+                    "cssClass": "",
+                    "required": false,
+                    "value":"",
+                    "options": [
+                        {
+                            "value": "single",
+                            "label": "Singlw"
+                        },
+                        {
+                            "value": "Married",
+                            "label": "Married",
+                            "selected": "selected"
+                        }
+                    ]
+                },
+                {
+                    "type": "textarea",
+                    "name": "expertise",
+                    "label": "Ask me about/Expertise",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "textarea",
+                    "name": "aboutMe",
+                    "label": "About Me",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "nameGroup",
+            "label": "Identity Information",
+            "cols": 6,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "uad",
+                    "label": "UAN",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "pan",
+                    "label": "PAN",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "aadhaar",
+                    "label": "Aadhaar",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "contactDetails",
+            "label": "Contact Details",
+            "cols": 4,
+            "fields": [
+                {
+                    "type": "number",
+                    "name": "workingPhoneNumber",
+                    "label": "Work Phone Numbe",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "number",
+                    "name": "personalMobileNumber",
+                    "label": "Personal Mobile Number",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "extension",
+                    "label": "Extension",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "seatingLocation",
+                    "label": "Seating Location",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "tags",
+                    "label": "Tags",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "PresentAddress",
+            "label": "Present Address",
+            "cols": 3,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "address1",
+                    "label": "Address line 1",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "address2",
+                    "label": "Address line 2",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "city",
+                    "label": "city",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "country",
+                    "label": "country",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":"",
+                    "provider": {
+                        "url": "http://localhost:8082/api/v1/country",
+                        "value": "id",
+                        "label": "name"
+                    }
+                },
+                {
+                    "type": "text",
+                    "name": "postalCode",
+                    "label": "Postal Code",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "permanentAddress",
+            "label": "Permanent Address",
+            "cols": 3,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "address1",
+                    "label": "Address line 1",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "address2",
+                    "label": "Address line 2",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "city",
+                    "label": "city",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "country",
+                    "label": "country",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":"",
+                    "provider": {
+                        "url": "http://localhost:8082/api/v1/country",
+                        "value": "id",
+                        "label": "name"
+                    }
+                },
+                {
+                    "type": "text",
+                    "name": "postalCode",
+                    "label": "Postal Code",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "systemFields",
+            "label": "System Fields",
+            "cols": 3,
+            "fields": [
+                {
+                    "type": "text",
+                    "name": "addedBy",
+                    "label": "Added By",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "text",
+                    "name": "modifiedBy",
+                    "label": "Modified By",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "date",
+                    "name": "addedTime",
+                    "label": "Added Time",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                },
+                {
+                    "type": "date",
+                    "name": "modifiedTime",
+                    "label": "Modified Time",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value":""
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "save",
+            "type": "button",
+            "label": "Save",
+            "cssClass": "btn btn-sm btn-primary mt-3 ms-2",
+            "applyTo": "form",
+            "handler": {
+                "type": "javascript",
+                "func": "submitForm",
+                "method": "post",
+                "url": "http://localhost:8082/api/v1/user"
+            }
+        },
+        {
+            "name": "cancel",
+            "type": "button",
+            "label": "Cancel",
+            "cssClass": "btn btn-sm btn-danger mt-3 ms-2",
+            "applyTo": "form",
+            "handler": {
+                "type": "javascript",
+                "func": "test"
+            }
+        },
+        {
+            "name": "add",
+            "type": "button",
+            "label": "Add Employee",
+            "cssClass": "btn-danger",
+            "applyTo": "list"
+        }
+    ],
+    "dataProvider": {
+        "collection": {
+            "url": ""
+        },
+        "selector": {
+            "url": ""
+        }
+    }
+}
