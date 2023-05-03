@@ -17,21 +17,16 @@ import Otp from '../fields/Otp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import 'jquery/dist/jquery';
-
 const Renderer = (props) => {
     const [fieldArray, setFieldArray] = useState(props.fieldArray);
     const fieldChange = (event, field, index) => {
         setFieldArray(prev => prev.map((item, idx) => {
-
             if (item.type === "group") {
                 item.fields.map((fld, ind) => {
-                    console.log("***************", field.name, " : ", fld.name);
-
                     if (field?.type === 'select' && field?.name === fld.name || event.target?.name === fld.name) {
                         if (field.type === 'select') {
                             console.log("group 1....", event.value)
                             fld.value = event.value;
-
                         }
                         else if (field.type === "tel") {
                             fld.value = event;
@@ -58,14 +53,10 @@ const Renderer = (props) => {
                         item.value = event.target.value;
                     }
                 }
-
             }
             return item;
         }));
     }
-
-
-
     const setField = (field, index) => {
         let element = <></>;
         switch (field.type) {
@@ -88,7 +79,6 @@ const Renderer = (props) => {
         }
         return element;
     }
-
     return (
         <div className='mt-3'>
             {
@@ -96,14 +86,14 @@ const Renderer = (props) => {
                     <div className='row '>
                         {
                             item.type === 'group' ? (<>
-                                    <h5 className='mt-4'>{item.label}</h5>
-                                    {
-                                        item.fields.map((field, idx) => <>
-                                            <div key={`${index}_${idx}`} className={`col-md-${item.cols} col-sm-${item.cols}`}>
-                                                {setField(field, idx)}
-                                            </div>
-                                        </>)
-                                    }
+                                <h5 className='mt-4'>{item.label}</h5>
+                                {
+                                    item.fields.map((field, idx) => <>
+                                        <div key={`${index}_${idx}`} className={`col-md-${item.cols} col-sm-${item.cols}`}>
+                                            {setField(field, idx)}
+                                        </div>
+                                    </>)
+                                }
                             </>) : (
                                 <>
                                     {setField(item, index)}
@@ -117,6 +107,5 @@ const Renderer = (props) => {
 
     );
 }
-
 export default Renderer;
 

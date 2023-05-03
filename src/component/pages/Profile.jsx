@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import { setJsonValue } from '../../library/helper/JsonValue';
 import toast from 'react-hot-toast';
+import axios from 'axios'
 export const Profile = () => {
     const [show, setShow] = useState(false);
 
@@ -18,17 +19,23 @@ export const Profile = () => {
         let form = document.getElementById("fileForm")
         console.log(form)
         let formData = new FormData(form)
-        console.log(formData)
-        console.table(formData.keys())
-        // for (const key of formData.keys()) {
-        //     console.log(key)
-        // }
-
+        let workInfoForm = new FormData()
+        workInfoForm.append("department", "I.T department");
+        workInfoForm.append("location", "Noida");
+        formData.append("officialInfo", workInfoForm);
+        console.log(workInfoForm.get("department"))
         console.log(formData.get("firstName"))
-        console.log(formData.get("lastName"))
-        console.log(formData.get("employeeId"))
-
-        handleClose()
+        axios.post('http://localhost:8085/api/v1/employee', form, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response) => {
+            console.log(response.data);
+            toast.success("Your Form has been succesfully submitted");
+        }).catch((err) => {
+            console.error(err);
+            toast.error("Opps ! Something went wrong")
+        })
         toast.success("Your Form has been succesfully submitted");
 
     }
@@ -58,7 +65,12 @@ export const Profile = () => {
 
     return (
         <>
+
             <div >
+
+                <Form formObject={personalInfoForm} actions={allFunc}></Form>
+                <hr></hr>
+                <hr></hr>
                 <div className='row mb-3'>
                     <div className='col-md-12-col-sm-12'>
                         <Button variant="outline-primary" onClick={handleShow}>
@@ -296,7 +308,7 @@ export const Profile = () => {
                     {/* <Modal.Title>Modal heading</Modal.Title> */}
                 </Modal.Header>
                 <Modal.Body>
-                    <Form formObject={personalInfoForm} actions={allFunc}></Form>
+                    {/* <Form formObject={personalInfoForm} actions={allFunc}></Form> */}
                 </Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
