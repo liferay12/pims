@@ -16,6 +16,7 @@ const Number=(props)=>{
                     disabled={props.fieldConfig.disabled}
                     readOnly={props.fieldConfig.readOnly}
                     hidden={props.fieldConfig.hidden}
+                    value={props.fieldConfig.value}
                     // pattern={props.fieldConfig.pattern}
                     // required={props.fieldConfig.required}
                     // maxLength={props.fieldConfig.maxLength}

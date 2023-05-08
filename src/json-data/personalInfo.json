@@ -6,6 +6,14 @@
     "enctype": "multipart/form-data",
     "fields": [
         {
+            "type": "text",
+            "name": "id",
+            "label": "profile id",
+            "cssClass": "form-control",
+            "required": false,
+            "value": ""
+        },
+        {
             "type": "group",
             "name": "nameGroup",
             "label": "Basic Information",
@@ -26,8 +34,7 @@
                     "cssClass": "form-control",
                     "required": false,
                     "value": ""
-                }
-                ,
+                },
                 {
                     "type": "text",
                     "name": "middleName",
@@ -56,7 +63,7 @@
         },
         {
             "type": "group",
-            "name": "nameGroup",
+            "name": "officialInfo",
             "label": "Work Information",
             "cols": 3,
             "fields": [
@@ -120,7 +127,7 @@
         },
         {
             "type": "group",
-            "name": "nameGroup",
+            "name": "personalInfo",
             "label": "Hierarchy Information",
             "cols": 8,
             "fields": [
@@ -136,7 +143,7 @@
         },
         {
             "type": "group",
-            "name": "nameGroup",
+            "name": "personalInfo",
             "label": "Personal Details",
             "cols": 6,
             "fields": [
@@ -219,7 +226,7 @@
         },
         {
             "type": "group",
-            "name": "contactDetails",
+            "name": "contactInfo",
             "label": "Contact Details",
             "cols": 4,
             "fields": [
@@ -233,7 +240,7 @@
                 },
                 {
                     "type": "number",
-                    "name": "personalMobileNumber",
+                    "name": "phoneNo",
                     "label": "Personal Mobile Number",
                     "cssClass": "form-control",
                     "required": false,
@@ -415,7 +422,7 @@
     "actions": [
         {
             "name": "save",
-            "type": "button",
+            "type": "submit",
             "label": "Save",
             "cssClass": "btn btn-sm btn-primary mt-3 ms-2",
             "applyTo": "form",
@@ -423,7 +430,20 @@
                 "type": "javascript",
                 "func": "submitForm",
                 "method": "post",
-                "url": "http://localhost:8082/api/v1/user"
+                "url": "http://localhost:8085/api/v1/employee"
+            }
+        },
+        {
+            "name": "update",
+            "type": "submit",
+            "label": "Update",
+            "cssClass": "btn btn-sm btn-primary mt-3 ms-2",
+            "applyTo": "form",
+            "handler": {
+                "type": "javascript",
+                "func": "submitForm(event)",
+                "method": "put",
+                "url": "http://localhost:8085/api/v1/employee"
             }
         },
         {
@@ -450,6 +470,9 @@
             "url": ""
         },
         "selector": {
+            "url": ""
+        },
+        "create": {
             "url": ""
         }
     }

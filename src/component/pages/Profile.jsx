@@ -5,7 +5,6 @@ import Form from '../../library/renderer/FormRenderer';
 import personalInfoForm from "../../json-data/personalInfo.json"
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
-import { setJsonValue } from '../../library/helper/JsonValue';
 import toast from 'react-hot-toast';
 import axios from 'axios'
 export const Profile = () => {
@@ -16,31 +15,31 @@ export const Profile = () => {
 
 
     const submitForm = (e) => {
+        e.preventDefault();
+        alert("submit alert from profile component ")
         let form = document.getElementById("fileForm")
         console.log(form)
         let formData = new FormData(form)
-        let workInfoForm = new FormData()
-        workInfoForm.append("department", "I.T department");
-        workInfoForm.append("location", "Noida");
-        formData.append("officialInfo", workInfoForm);
-        console.log(workInfoForm.get("department"))
-        console.log(formData.get("firstName"))
-        axios.post('http://localhost:8085/api/v1/employee', form, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then((response) => {
-            console.log(response.data);
-            toast.success("Your Form has been succesfully submitted");
-        }).catch((err) => {
-            console.error(err);
-            toast.error("Opps ! Something went wrong")
-        })
-        toast.success("Your Form has been succesfully submitted");
+        // let workInfoForm = new FormData()
+       
+        // console.log(formData.get("firstName"))
+        // axios.post('http://localhost:8085/api/v1/employee', form, {
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // }).then((response) => {
+        //     console.log(response.data);
+        //     toast.success("Your Form has been succesfully submitted");
+        // }).catch((err) => {
+        //     console.error(err);
+        //     toast.error("Opps ! Something went wrong")
+        // })
+        // toast.success("Your Form has been succesfully submitted");
 
     }
     const test = () => {
-        handleClose()
+        alert("Called Cancel button...")
+        // handleClose()
     }
 
 
@@ -49,17 +48,7 @@ export const Profile = () => {
     };
 
 
-    useEffect(() => {
-        var obj = {
-            "employeeId": "001",
-            "nickName": "sweet tooth",
-            "firstName": "Ashwani",
-            "lastName": "Rao",
-        }
-
-        personalInfoForm.fields = setJsonValue(personalInfoForm.fields, obj)
-
-    }, [])
+   
 
 
 
@@ -68,8 +57,9 @@ export const Profile = () => {
 
             <div >
 
-                <Form formObject={personalInfoForm} actions={allFunc}></Form>
-                <hr></hr>
+                <Form formObject={personalInfoForm} editId={"9"} actions={""}></Form>
+
+                {/* <hr></hr>
                 <hr></hr>
                 <div className='row mb-3'>
                     <div className='col-md-12-col-sm-12'>
@@ -83,11 +73,10 @@ export const Profile = () => {
                         <Card >
                             <Card.Body>
                                 <Card.Title>About Me</Card.Title>
-                                {/* <Card.Text>
+                                 <Card.Text>
                                     Some quick example text to build on the card title and make up the
                                     bulk of the card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aspernatur fugiat dolores consequuntur a sunt. Debitis quidem vitae esse sint magnam qui quos officia, quae provident quia autem, nam velit.
-                                </Card.Text> */}
-
+                                </Card.Text> 
                                 <div className='row'>
                                     <div className='col-md-6 col-sm-12'>
                                         <div className='row'>
@@ -106,7 +95,6 @@ export const Profile = () => {
                                 </div>
                             </Card.Body>
                         </Card>
-
                         <Card >
                             <Card.Body>
                                 <Card.Title>Work Information</Card.Title>
@@ -148,7 +136,6 @@ export const Profile = () => {
                                 </Table>
                             </Card.Body>
                         </Card>
-
                         <Card >
                             <Card.Body>
                                 <Card.Title>Identity Information</Card.Title>
@@ -195,13 +182,11 @@ export const Profile = () => {
                                 </Table>
                             </Card.Body>
                         </Card>
-
                     </div>
                     <div className='col-md-6 col-sm-12'>
                         <Card >
                             <Card.Body>
                                 <Card.Title>Tags</Card.Title>
-
                             </Card.Body>
                         </Card>
                         <Card >
@@ -246,7 +231,6 @@ export const Profile = () => {
                                 </Table>
                             </Card.Body>
                         </Card>
-
                         <Card >
                             <Card.Body>
                                 <Card.Title>Personal Details</Card.Title>
@@ -272,7 +256,6 @@ export const Profile = () => {
                                 </Table>
                             </Card.Body>
                         </Card>
-
                         <Card >
                             <Card.Body>
                                 <Card.Title>Contact Details</Card.Title>
@@ -298,27 +281,26 @@ export const Profile = () => {
                                 </Table>
                             </Card.Body>
                         </Card>
-
                     </div>
-                </div>
-
+                </div> */}
             </div>
-            <Modal size='xl' show={show} onHide={handleClose}>
+
+            {/* <Modal size='xl' show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    {/* <Modal.Title>Modal heading</Modal.Title> */}
+                    <Modal.Title>Modal heading</Modal.Title> 
                 </Modal.Header>
                 <Modal.Body>
-                    {/* <Form formObject={personalInfoForm} actions={allFunc}></Form> */}
+                     <Form formObject={personalInfoForm} actions={allFunc}></Form>
                 </Modal.Body>
-                {/* <Modal.Footer>
+                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
                         Save Changes
                     </Button>
-                </Modal.Footer> */}
-            </Modal>
+                </Modal.Footer> 
+            </Modal> */}
         </>
     );
 }
