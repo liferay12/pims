@@ -9,11 +9,8 @@ import toast from 'react-hot-toast';
 import axios from 'axios'
 export const Profile = () => {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-
     const submitForm = (e) => {
         e.preventDefault();
         alert("submit alert from profile component ")
@@ -21,7 +18,7 @@ export const Profile = () => {
         console.log(form)
         let formData = new FormData(form)
         // let workInfoForm = new FormData()
-       
+
         // console.log(formData.get("firstName"))
         // axios.post('http://localhost:8085/api/v1/employee', form, {
         //     headers: {
@@ -35,29 +32,20 @@ export const Profile = () => {
         //     toast.error("Opps ! Something went wrong")
         // })
         // toast.success("Your Form has been succesfully submitted");
-
     }
     const test = () => {
         alert("Called Cancel button...")
         // handleClose()
     }
-
-
     const allFunc = {
         "submitForm": submitForm, "test": test
     };
-
-
-   
-
-
-
     return (
         <>
 
-            <div >
+            <div > 
 
-                <Form formObject={personalInfoForm} editId={"9"} actions={""}></Form>
+                <Form formObject={personalInfoForm} editId={""} actions={""}></Form>
 
                 {/* <hr></hr>
                 <hr></hr>

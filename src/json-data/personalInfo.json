@@ -15,7 +15,7 @@
         },
         {
             "type": "group",
-            "name": "nameGroup",
+            "name": "",
             "label": "Basic Information",
             "cols": 6,
             "fields": [
@@ -69,6 +69,14 @@
             "fields": [
                 {
                     "type": "text",
+                    "name": "id",
+                    "label": "ID",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value": ""
+                },
+                {
+                    "type": "text",
                     "name": "department",
                     "label": "Department",
                     "cssClass": "form-control",
@@ -77,7 +85,7 @@
                 },
                 {
                     "type": "text",
-                    "name": "role",
+                    "name": "employeeType",
                     "label": "Role",
                     "cssClass": "form-control",
                     "required": false,
@@ -194,13 +202,21 @@
         },
         {
             "type": "group",
-            "name": "nameGroup",
+            "name": "personalInfo",
             "label": "Identity Information",
             "cols": 6,
             "fields": [
                 {
                     "type": "text",
-                    "name": "uad",
+                    "name": "id",
+                    "label": "ID",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value": ""
+                },
+                {
+                    "type": "text",
+                    "name": "uan",
                     "label": "UAN",
                     "cssClass": "form-control",
                     "required": false,
@@ -230,6 +246,14 @@
             "label": "Contact Details",
             "cols": 4,
             "fields": [
+                {
+                    "type": "text",
+                    "name": "id",
+                    "label": "ID",
+                    "cssClass": "form-control",
+                    "required": false,
+                    "value": ""
+                },
                 {
                     "type": "number",
                     "name": "workingPhoneNumber",

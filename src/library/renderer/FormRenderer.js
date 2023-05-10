@@ -6,14 +6,12 @@ import { setJsonValue } from '../helper/JsonValue';
 // import MyFunction from '../../component/allFunc';
 const Form = (props) => {
     // const func=MyFunction;
-
     var [requestURL, setRequestURL] = useState();
     var [requestMethod, setRequestMethod] = useState();
     const { formObject } = props;
     const [fieldArray, setFieldArray] = useState(formObject.fields);
     const [isActions, setActions] = useState(false);
     useEffect(() => {
-
         var obj = {
             "employeeId": "001",
             "middleName": "Kumar",
@@ -26,22 +24,17 @@ const Form = (props) => {
         if (props.editId !== undefined && props.editId !== "") {
 
         }
-
         if (props.editId != "" && props.editId != undefined) {
             var editResponseData = {};
             props.formObject.actions.forEach((item, index) => {
-                console.log("requestURL : : : : ", item)
                 if (item.handler?.method === "put") {
-                    let resp = getUpdateData('http://localhost:8085/api/v1/employee/', 9);
+                    let resp = getUpdateData('http://localhost:8085/api/v1/employee/', props.editId);
                     resp.then((d) => {
                         let o = setJsonValue(fieldArray, d);
                         setFieldArray()
-
                     })
-
                     setRequestURL(item.handler.url);
                     setRequestMethod(item.handler.method);
-                    console.log("requestURL : : : : " + item.handler.url)
                 }
             })
         } else {
@@ -101,47 +94,48 @@ const Form = (props) => {
         <div className='container Form'>
             <h3 className='text-center'>{props.formObject.title}</h3>
             {
-                isActions ? (<form id={props.formObject.id}>
-                    <Renderer fieldArray={fieldArray} setFieldArray={setFieldArray} />
-                    <div className='text-center'>
-                        {
-                            props.formObject.actions.map((item, key) =>
-                                <>
-                                    {
-                                        props.editId != "" && props.editId != undefined ? (
-                                            <>
-                                                {
-                                                    item.applyTo === "form" && (item.handler.method === "put" || item.handler.method == undefined) ? (
-                                                        <>
-                                                            <button type={item.type} className={item.cssClass} onClick={eval(props.actions[item.handler?.func])} >{item.label}</button>
-                                                        </>
-                                                    ) : (
-                                                        <></>
-                                                    )
-                                                }
-                                            </>
-                                        ) : (
-                                            <>
-                                                {
-                                                    item.applyTo === "form" && (item.handler.method === "post" || item.handler.method == undefined) ? (
-                                                        <>
-                                                            <button type={item.type} className={item.cssClass} onClick={eval(props.actions[item.handler?.func])} >{item.label}</button>
-                                                        </>
-                                                    ) : (
-                                                        <></>
-                                                    )
-                                                }
-                                            </>
-                                        )
-                                    }
+                isActions ? (
+                    <form id={props.formObject.id}>
+                        <Renderer fieldArray={fieldArray} setFieldArray={setFieldArray} />
+                        <div className='text-center'>
+                            {
+                                props.formObject.actions.map((item, key) =>
+                                    <>
+                                        {
+                                            props.editId != "" && props.editId != undefined ? (
+                                                <>
+                                                    {
+                                                        item.applyTo === "form" && (item.handler.method === "put" || item.handler.method == undefined) ? (
+                                                            <>
+                                                                <button type={item.type} className={item.cssClass} onClick={eval(props.actions[item.handler?.func])} >{item.label}</button>
+                                                            </>
+                                                        ) : (
+                                                            <></>
+                                                        )
+                                                    }
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {
+                                                        item.applyTo === "form" && (item.handler.method === "post" || item.handler.method == undefined) ? (
+                                                            <>
+                                                                <button type={item.type} className={item.cssClass} onClick={eval(props.actions[item.handler?.func])} >{item.label}</button>
+                                                            </>
+                                                        ) : (
+                                                            <></>
+                                                        )
+                                                    }
+                                                </>
+                                            )
+                                        }
 
-                                </>
-                            )
-                        }
-                    </div>
-                </form>
-                ) :
-                    (<form onSubmit={onSubmit} id={props.formObject.id}>
+                                    </>
+                                )
+                            }
+                        </div>
+                    </form>
+                ) : (
+                    <form onSubmit={onSubmit} id={props.formObject.id}>
                         <Renderer fieldArray={fieldArray} setFieldArray={setFieldArray} />
                         <div className='text-center'>
                             {

@@ -54,10 +54,8 @@ export const SideBar = (props) => {
         };
         // set resize listener
         window.addEventListener('resize', resizeListener);
-        console.log("change width " + width);
         // clean up function
 
-        console.log("current width : " + window.innerWidth)
         let screenWidth = width;
 
         if (screenWidth <= 991) {
